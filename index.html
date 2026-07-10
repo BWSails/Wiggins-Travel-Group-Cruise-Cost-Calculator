@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Estimate cruise gratuities, packages, excursions, dining, Wi-Fi and other onboard costs with the Wiggins Travel Group Cruise Cost Calculator." />
+  <title>Wiggins Travel Group Cruise Cost Calculator</title>
+  <style>
+    :root{--navy:#072b4f;--blue:#0b6fb7;--sky:#eaf6ff;--ink:#17202a;--muted:#667585;--line:#d8e2eb;--card:#fff;--good:#137a4a;--warn:#9a5a00;--bg:#f5f8fb;--shadow:0 16px 45px rgba(7,43,79,.12)}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#e9f6ff 0,#f7fafc 34%,#eef3f7 100%);min-height:100vh}
+    button,input,select{font:inherit}.shell{max-width:1040px;margin:auto;padding:24px}.hero{background:linear-gradient(135deg,var(--navy),#0b5182);color:white;border-radius:24px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:240px;height:240px;border:45px solid rgba(255,255,255,.06);border-radius:50%;right:-80px;top:-80px}.eyebrow{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:#8fd0ff}.hero h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.02;margin:.35rem 0 .6rem;max-width:760px}.hero p{font-size:1.08rem;line-height:1.6;max-width:700px;color:#d9edfb;margin:0}.app{margin-top:18px;background:var(--card);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.progress-wrap{padding:18px 24px 10px;border-bottom:1px solid var(--line)}.progress-meta{display:flex;justify-content:space-between;font-size:.83rem;color:var(--muted);font-weight:700}.progress{height:8px;background:#e8eef3;border-radius:99px;margin-top:8px;overflow:hidden}.progress>div{height:100%;background:linear-gradient(90deg,var(--blue),#55b9ed);width:14.28%;transition:width .25s}.step{display:none;padding:28px}.step.active{display:block}.step h2{font-size:1.75rem;margin:0 0 .4rem;color:var(--navy)}.step .lead{color:var(--muted);margin:0 0 22px;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.choice{border:2px solid var(--line);border-radius:16px;padding:16px;background:#fff;cursor:pointer;text-align:left;transition:.15s;min-height:70px}.choice:hover{border-color:#8fc8ee;transform:translateY(-1px)}.choice.selected{border-color:var(--blue);background:var(--sky);box-shadow:0 0 0 3px rgba(11,111,183,.08)}.choice strong{display:block;color:var(--navy);font-size:1rem}.choice span{display:block;color:var(--muted);font-size:.82rem;margin-top:4px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:750;color:var(--navy);font-size:.9rem}.field input,.field select{width:100%;padding:13px 14px;border:1.5px solid #c9d5df;border-radius:12px;background:#fff;color:var(--ink)}.field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,111,183,.1)}.section-box{background:#f8fbfd;border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}.section-box h3{margin:0 0 12px;color:var(--navy)}.checkrow{display:flex;align-items:flex-start;gap:10px;padding:10px 0}.checkrow input{width:19px;height:19px;margin-top:1px}.checkrow label{line-height:1.4}.hint{font-size:.8rem;color:var(--muted);line-height:1.45}.notice{background:#fff8e9;border:1px solid #f3d99f;color:#744500;border-radius:13px;padding:13px 14px;margin-top:14px;font-size:.88rem;line-height:1.5}.buttons{display:flex;justify-content:space-between;gap:12px;padding:18px 28px 26px}.btn{border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer}.btn.primary{background:var(--blue);color:#fff}.btn.secondary{background:#e9f0f5;color:var(--navy)}.btn:hover{filter:brightness(.97)}.results{display:none;padding:28px}.results.show{display:block}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.kpi{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff}.kpi .label{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}.kpi .value{font-size:1.7rem;color:var(--navy);font-weight:900;margin-top:5px}.kpi.total{background:linear-gradient(135deg,var(--navy),#0b5b91);color:#fff;border:0}.kpi.total .label,.kpi.total .value{color:#fff}.breakdown{width:100%;border-collapse:collapse;margin:16px 0}.breakdown th,.breakdown td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left}.breakdown th:last-child,.breakdown td:last-child{text-align:right}.tag{display:inline-block;font-size:.7rem;font-weight:800;border-radius:99px;padding:4px 8px;background:#eaf6ff;color:#075b97}.tag.included{background:#e8f6ee;color:var(--good)}.advice{border-left:5px solid var(--blue);background:#eef8ff;border-radius:12px;padding:16px 18px;line-height:1.55;margin-top:18px}.fine{font-size:.76rem;color:var(--muted);line-height:1.5;margin-top:20px}.footer{text-align:center;color:var(--muted);font-size:.78rem;padding:22px}.hidden{display:none!important}@media(max-width:700px){.shell{padding:12px}.hero{padding:23px;border-radius:18px}.app{border-radius:18px}.step,.results{padding:20px}.grid,.grid.three,.kpis{grid-template-columns:1fr}.buttons{padding:14px 20px 22px}.hero h1{font-size:2.25rem}.kpi .value{font-size:1.5rem}}@media print{body{background:white}.hero,.progress-wrap,.buttons,.step,.footer,.print-hide{display:none!important}.app{box-shadow:none}.results{display:block!important;padding:0}.shell{max-width:none;padding:0}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header class="hero">
+    <div class="eyebrow">Wiggins Travel Group</div>
+    <h1>Cruise Cost Calculator</h1>
+    <p>Build a practical estimate of gratuities, packages, dining, excursions and other onboard spending before you sail.</p>
+  </header>
+
+  <main class="app" id="app">
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-meta"><span id="stepText">Step 1 of 7</span><span id="stepTitle">Cruise line</span></div>
+      <div class="progress"><div id="bar"></div></div>
+    </div>
+
+    <section class="step active" data-step="1">
+      <h2>Which cruise line are you sailing?</h2>
+      <p class="lead">Choose your line so the calculator can apply the appropriate gratuity and inclusion rules.</p>
+      <div class="grid three" id="lineChoices"></div>
+    </section>
+
+    <section class="step" data-step="2">
+      <h2>Tell us about the sailing</h2>
+      <p class="lead">Enter the length and cabin category shown on your reservation.</p>
+      <div class="grid">
+        <div class="field"><label for="nights">Number of nights</label><input id="nights" type="number" min="1" max="180" value="7"></div>
+        <div class="field"><label for="cabin">Cabin category</label><select id="cabin"><option value="standard">Interior / Oceanview / Balcony</option><option value="premium">Concierge / Mini-suite / Premium</option><option value="suite">Suite / Luxury Suite</option></select></div>
+        <div class="field"><label for="currency">Currency</label><select id="currency"><option value="USD">USD — US Dollar</option><option value="CAD">CAD — Canadian Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AUD">AUD — Australian Dollar</option></select></div>
+        <div class="field"><label for="fare">Fare or bundle</label><select id="fare"></select></div>
+      </div>
+      <div id="lineNote" class="notice"></div>
+    </section>
+
+    <section class="step" data-step="3">
+      <h2>Who is traveling?</h2>
+      <p class="lead">Guest ages matter because some cruise lines do not charge daily gratuities for very young children.</p>
+      <div class="grid">
+        <div class="field"><label for="adults">Adults (18+)</label><input id="adults" type="number" min="1" max="20" value="2"></div>
+        <div class="field"><label for="children">Children / teens</label><input id="children" type="number" min="0" max="20" value="0"></div>
+      </div>
+      <div id="agesBox" class="section-box hidden"><h3>Child ages</h3><div class="grid" id="ages"></div></div>
+    </section>
+
+    <section class="step" data-step="4">
+      <h2>What is already included or prepaid?</h2>
+      <p class="lead">Mark items already covered by your fare, promotion or pre-cruise purchase so they are not counted twice.</p>
+      <div id="includedBox" class="section-box"></div>
+    </section>
+
+    <section class="step" data-step="5">
+      <h2>Enter package and dining costs</h2>
+      <p class="lead">Package prices often vary by sailing. Use the amount shown in your cruise planner or booking confirmation.</p>
+      <div class="grid">
+        <div class="field"><label for="drink">Drink packages — total trip cost</label><input id="drink" type="number" min="0" step="0.01" value="0"><span class="hint">Enter the total after gratuity/service charge, if applicable.</span></div>
+        <div class="field"><label for="wifi">Wi-Fi — total trip cost</label><input id="wifi" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="dining">Specialty dining — total trip cost</label><input id="dining" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="room">Room service and delivery fees</label><input id="room" type="number" min="0" step="0.01" value="0"></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="6">
+      <h2>Estimate discretionary spending</h2>
+      <p class="lead">These amounts are completely optional, but including them creates a more realistic onboard budget.</p>
+      <div class="grid">
+        <div class="field"><label for="excursions">Shore excursions</label><input id="excursions" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="spa">Spa and salon</label><input id="spa" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="casino">Casino budget</label><input id="casino" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="shopping">Shopping, photos and souvenirs</label><input id="shopping" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="other">Other planned spending</label><input id="other" type="number" min="0" step="0.01" value="0"></div>
+        <div class="field"><label for="taxBuffer">Port tax / VAT buffer</label><input id="taxBuffer" type="number" min="0" step="0.01" value="0"><span class="hint">Optional estimate for local taxes on onboard purchases while in certain ports.</span></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="7">
+      <h2>Review your estimate</h2>
+      <p class="lead">The calculator will separate mandatory charges from optional spending and flag anything already included.</p>
+      <div class="notice">This is a planning estimate, not a cruise-line invoice. Policies, exchange rates, package prices and local taxes can change.</div>
+    </section>
+
+    <div class="buttons" id="navButtons"><button class="btn secondary" id="back" type="button">Back</button><button class="btn primary" id="next" type="button">Continue</button></div>
+
+    <section class="results" id="results">
+      <h2>Your estimated cruise costs</h2>
+      <p class="lead" id="summaryLine"></p>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Mandatory / automatic</div><div class="value" id="mandatoryTotal"></div></div>
+        <div class="kpi"><div class="label">Optional spending</div><div class="value" id="optionalTotal"></div></div>
+        <div class="kpi total"><div class="label">Estimated onboard budget</div><div class="value" id="grandTotal"></div></div>
+      </div>
+      <table class="breakdown"><thead><tr><th>Item</th><th>Status</th><th>Estimate</th></tr></thead><tbody id="breakdownRows"></tbody></table>
+      <div class="advice" id="advice"></div>
+      <div class="buttons print-hide" style="padding-left:0;padding-right:0"><button class="btn secondary" id="restart" type="button">Start over</button><button class="btn secondary" id="copy" type="button">Copy summary</button><button class="btn primary" onclick="window.print()" type="button">Print / Save PDF</button></div>
+      <p class="fine">Rates marked as fixed are based on the calculator's current reference data. Dynamic package prices must be entered from the traveler’s booking. Cruise-line policies can change without notice. Verify all costs with the cruise line or Wiggins Travel Group before purchase. Version 1.0 · Updated July 2026.</p>
+    </section>
+  </main>
+  <div class="footer">Wiggins Travel Group · Cruise planning made easier</div>
+</div>
+<script>
+const lines={
+  carnival:{name:'Carnival Cruise Line',threshold:2,rates:{standard:0,premium:0,suite:0},ratePrompt:true,fares:['Cruise Only / Standard Fare'],note:'Carnival gratuity rates should be confirmed from your booking because current official rates were not reliably available in the source pass. Enter the current daily rate on the next screen when prompted.',included:[]},
+  royal:{name:'Royal Caribbean',threshold:0,rates:{standard:18,premium:18,suite:20.5},fares:['Cruise Only / Standard Fare'],note:'Royal Caribbean beverage, dining and Wi-Fi prices are often dynamic. Enter the current total shown in Cruise Planner.',included:[]},
+  ncl:{name:'Norwegian Cruise Line',threshold:3,rates:{standard:20,premium:20,suite:25},fares:['Cruise Only','More At Sea / promotional fare'],note:'More At Sea can include beverage, dining and Wi-Fi benefits, but some related service charges may still apply. Enter amounts shown on your booking.',included:[]},
+  msc:{name:'MSC Cruises',threshold:0,rates:{standard:0,premium:0,suite:0},ratePrompt:true,fares:['Bella','Fantastica','Aurea','Yacht Club'],note:'MSC hotel service charges vary by itinerary, destination, voyage length and age. Enter the current daily rate from your booking.',included:[]},
+  celebrity:{name:'Celebrity Cruises',threshold:0,rates:{standard:18,premium:19,suite:23},fares:['Cruise Only','All Included','The Retreat'],note:'All Included generally covers Classic Drinks and Basic Wi-Fi. Confirm the exact benefits attached to your fare.',included:[]},
+  princess:{name:'Princess Cruises',threshold:0,rates:{standard:18,premium:19,suite:20},fares:['Princess Standard','Princess Plus','Princess Premier'],note:'Princess Plus and Premier generally cover crew appreciation and include specified beverage, Wi-Fi and dining benefits.',included:[]},
+  hal:{name:'Holland America Line',threshold:0,rates:{standard:18,premium:18,suite:20},fares:['Cruise Only','Have It All','Have It All Early Booking Bonus'],note:'Standard Have It All does not always include crew appreciation. Check the exact promotion attached to your reservation.',included:[]},
+  virgin:{name:'Virgin Voyages',threshold:18,rates:{standard:0,premium:0,suite:0},fares:['Always Included Luxury'],note:'Virgin Voyages includes crew gratuities, essential drinks, dining and basic Wi-Fi. It uses Bar Tab rather than a traditional unlimited drink package.',included:['gratuities','wifi','dining']},
+  disney:{name:'Disney Cruise Line',threshold:0,rates:{standard:16,premium:16,suite:16},fares:['Standard Fare'],note:'Disney includes soft drinks at meals and beverage stations, but alcoholic drinks, specialty beverages and adult dining are extra.',included:[]},
+  viking:{name:'Viking Ocean / Expedition',threshold:0,rates:{standard:0,premium:0,suite:0},ratePrompt:true,fares:['Standard Viking Fare'],note:'Viking includes Wi-Fi, dining and beer/wine/soft drinks with meals. Gratuity treatment can vary by market and itinerary, so enter the current rate from your booking if not included.',included:['wifi','dining']},
+  oceania:{name:'Oceania Cruises',threshold:0,rates:{standard:0,premium:0,suite:0},fares:['Your World Included'],note:'Oceania includes shipboard gratuities, Wi-Fi, specialty dining and a broad selection of nonalcoholic beverages.',included:['gratuities','wifi','dining']},
+  regent:{name:'Regent Seven Seas Cruises',threshold:0,rates:{standard:0,premium:0,suite:0},fares:['All-Inclusive Fare'],note:'Regent includes gratuities, beverages, Wi-Fi and specialty dining. Spa gratuities and personal spending may remain extra.',included:['gratuities','drink','wifi','dining']},
+  silversea:{name:'Silversea',threshold:0,rates:{standard:0,premium:0,suite:0},fares:['All-Inclusive Fare'],note:'Silversea is broadly all-inclusive. Verify the precise inclusions and any spa or premium-experience charges on your sailing.',included:['gratuities','drink','wifi','dining']},
+  seabourn:{name:'Seabourn',threshold:0,rates:{standard:0,premium:0,suite:0},fares:['All-Inclusive Fare'],note:'Seabourn says gratuities are neither required nor expected and includes premium beverages, Wi-Fi and dining. Spa/salon gratuities can be extra.',included:['gratuities','drink','wifi','dining']},
+  explora:{name:'Explora Journeys',threshold:0,rates:{standard:0,premium:0,suite:0},fares:['Journey Fare'],note:'Explora includes gratuities, beverages, Wi-Fi, dining and in-suite dining in its core fare model.',included:['gratuities','drink','wifi','dining']},
+  windstar:{name:'Windstar Cruises',threshold:0,rates:{standard:0,premium:0,suite:0},ratePrompt:true,fares:['Cruise Only','All-In Package'],note:'Windstar All-In includes Wi-Fi, select beverages and gratuities. Cruise-only gratuity rates should be entered from the booking.',included:[]},
+  azamara:{name:'Azamara',threshold:0,rates:{standard:0,premium:0,suite:0},fares:['Always Azamara / Current Fare'],note:'Azamara generally includes gratuities and selected beverages. Wi-Fi and premium-package benefits can vary by fare and promotion.',included:['gratuities']}
+};
+const order=['carnival','royal','ncl','msc','celebrity','princess','hal','virgin','disney','viking','oceania','regent','silversea','seabourn','explora','windstar','azamara'];
+const state={step:1,line:null};
+const $=id=>document.getElementById(id), money=n=>new Intl.NumberFormat(undefined,{style:'currency',currency:$('currency').value||'USD'}).format(Number(n)||0);
+function renderLines(){ $('lineChoices').innerHTML=order.map(k=>`<button type="button" class="choice" data-line="${k}"><strong>${lines[k].name}</strong><span>Select cruise line</span></button>`).join(''); document.querySelectorAll('[data-line]').forEach(b=>b.onclick=()=>{state.line=b.dataset.line;document.querySelectorAll('[data-line]').forEach(x=>x.classList.toggle('selected',x===b));}); }
+function updateLineFields(){const l=lines[state.line];$('fare').innerHTML=l.fares.map(x=>`<option>${x}</option>`).join('');$('lineNote').textContent=l.note;renderIncluded();}
+function selectedFareIncludes(){const l=lines[state.line],fare=$('fare').value;const s=new Set(l.included);if(state.line==='princess'&&(fare.includes('Plus')||fare.includes('Premier')))['gratuities','drink','wifi'].forEach(x=>s.add(x));if(state.line==='celebrity'&&(fare==='All Included'||fare==='The Retreat'))['drink','wifi'].forEach(x=>s.add(x));if(state.line==='windstar'&&fare==='All-In Package')['gratuities','drink','wifi'].forEach(x=>s.add(x));if(state.line==='msc'&&fare==='Yacht Club')['drink','wifi'].forEach(x=>s.add(x));if(state.line==='ncl'&&fare.includes('More At Sea'))['drink','wifi','dining'].forEach(x=>s.add(x));if(state.line==='hal'&&fare.includes('Have It All'))['drink','wifi','dining'].forEach(x=>s.add(x));return s;}
+function renderIncluded(){if(!state.line)return;const l=lines[state.line],inc=selectedFareIncludes();$('includedBox').innerHTML=`<h3>Included / prepaid</h3>${['gratuities','drink','wifi','dining'].map(k=>`<div class="checkrow"><input id="inc_${k}" type="checkbox" ${inc.has(k)?'checked':''}><label for="inc_${k}"><strong>${({gratuities:'Daily gratuities / crew appreciation',drink:'Beverage package or included beverages',wifi:'Wi-Fi',dining:'Specialty dining benefits'}[k])}</strong><div class="hint">${inc.has(k)?'Preselected based on the fare or cruise line. Confirm against your reservation.':'Check if already prepaid or included.'}</div></label></div>`).join('')} ${l.ratePrompt?`<div class="field" style="margin-top:12px"><label for="customRate">Current daily gratuity/service charge per applicable guest</label><input id="customRate" type="number" min="0" step="0.01" value="0"><span class="hint">Use the amount shown by the cruise line for your sailing.</span></div>`:''}`;}
+function renderAges(){const n=+$('children').value||0;$('agesBox').classList.toggle('hidden',n===0);$('ages').innerHTML=Array.from({length:n},(_,i)=>`<div class="field"><label for="age${i}">Child ${i+1} age</label><input id="age${i}" type="number" min="0" max="17" value="10"></div>`).join('');}
+function showStep(n){state.step=n;document.querySelectorAll('.step').forEach(s=>s.classList.toggle('active',+s.dataset.step===n));$('stepText').textContent=`Step ${n} of 7`;$('stepTitle').textContent=['','Cruise line','Sailing details','Guests','Included items','Packages','Optional spending','Review'][n];$('bar').style.width=`${n/7*100}%`;$('back').style.visibility=n===1?'hidden':'visible';$('next').textContent=n===7?'Calculate estimate':'Continue';}
+function validate(){if(state.step===1&&!state.line){alert('Please choose a cruise line.');return false;}if(state.step===2&&(+$('nights').value<1)){alert('Please enter the number of nights.');return false;}return true;}
+function val(id){return Math.max(0,parseFloat($(id).value)||0)}
+function calculate(){const l=lines[state.line],nights=val('nights'),adults=val('adults'),kids=val('children');let eligible=adults;for(let i=0;i<kids;i++){const age=val('age'+i);if(age>=l.threshold)eligible++;}let rate=l.ratePrompt?val('customRate'):l.rates[$('cabin').value];const incG=$('inc_gratuities').checked;const gratuities=incG?0:eligible*nights*rate;const incD=$('inc_drink').checked,incW=$('inc_wifi').checked,incDi=$('inc_dining').checked;const items=[
+ ['Daily gratuities / crew appreciation',incG?'Included / prepaid':'Calculated',gratuities,true,incG],
+ ['Drink packages / beverage spending',incD?'Included / prepaid':'Traveler-entered',incD?0:val('drink'),false,incD],
+ ['Wi-Fi',incW?'Included / prepaid':'Traveler-entered',incW?0:val('wifi'),false,incW],
+ ['Specialty dining',incDi?'Included / prepaid':'Traveler-entered',incDi?0:val('dining'),false,incDi],
+ ['Room service / delivery fees','Traveler-entered',val('room'),false,false],
+ ['Shore excursions','Estimated',val('excursions'),false,false],
+ ['Spa and salon','Estimated',val('spa'),false,false],
+ ['Casino budget','Estimated',val('casino'),false,false],
+ ['Shopping, photos and souvenirs','Estimated',val('shopping'),false,false],
+ ['Other planned spending','Estimated',val('other'),false,false],
+ ['Port tax / VAT buffer','Estimated',val('taxBuffer'),false,false]
+ ];
+ const mandatory=gratuities,optional=items.slice(1).reduce((a,x)=>a+x[2],0),total=mandatory+optional;
+ $('mandatoryTotal').textContent=money(mandatory);$('optionalTotal').textContent=money(optional);$('grandTotal').textContent=money(total);$('summaryLine').textContent=`${l.name} · ${nights} nights · ${adults+kids} traveler${adults+kids===1?'':'s'} · ${$('cabin').selectedOptions[0].text}`;
+ $('breakdownRows').innerHTML=items.map(x=>`<tr><td>${x[0]}</td><td><span class="tag ${x[4]?'included':''}">${x[1]}</span></td><td>${x[4]?'—':money(x[2])}</td></tr>`).join('');
+ let advice=`<strong>Captain Bill’s planning note:</strong> This estimate separates automatic charges from discretionary spending. `;
+ if(l.ratePrompt&&rate===0&&!incG)advice+=`A current daily service-charge rate was not entered, so gratuities are not included in the total. `;
+ if(!incD&&val('drink')===0)advice+=`No drink-package or pay-as-you-go beverage budget was entered. `;
+ advice+=`Before relying on the total, compare it with your cruise confirmation and the cruise line’s current planner.`;$('advice').innerHTML=advice;
+ document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));$('navButtons').classList.add('hidden');$('progressWrap').classList.add('hidden');$('results').classList.add('show');
+ }
+function restart(){location.reload()}
+function copySummary(){const text=`Wiggins Travel Group Cruise Cost Estimate\n${$('summaryLine').textContent}\nMandatory/automatic: ${$('mandatoryTotal').textContent}\nOptional spending: ${$('optionalTotal').textContent}\nEstimated onboard budget: ${$('grandTotal').textContent}\nPlanning estimate only; verify with the cruise line.`;navigator.clipboard.writeText(text).then(()=>{ $('copy').textContent='Copied!';setTimeout(()=>$('copy').textContent='Copy summary',1400);});}
+$('children').addEventListener('input',renderAges);$('fare').addEventListener('change',renderIncluded);$('next').onclick=()=>{if(!validate())return;if(state.step===1)updateLineFields();if(state.step===3)renderAges();if(state.step<7)showStep(state.step+1);else calculate();};$('back').onclick=()=>showStep(Math.max(1,state.step-1));$('restart').onclick=restart;$('copy').onclick=copySummary;renderLines();showStep(1);
+</script>
+</body>
+</html>
